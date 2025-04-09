@@ -5,7 +5,7 @@ compatibility_flags = ["nodejs_compat"]
 main = "./.cloudflare/worker.js"
 
 [build]
-command = "npm run build"
+command = "npm install --save-dev typescript @types/react && npm run build"
 cwd = "."
 dist = ".cloudflare/static"
 
