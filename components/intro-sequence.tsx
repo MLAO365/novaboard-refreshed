@@ -28,16 +28,15 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
 
   // Text for the terminal output
   const terminalLines = [
-    "INITIALIZING QUANTUM CORE...",
-    "ESTABLISHING NEURAL INTERFACE...",
-    "CALIBRATING DIMENSIONAL STABILIZERS...",
-    "SYNCHRONIZING TEMPORAL MATRIX...",
-    "LOADING NOVATERRA PROTOCOLS...",
-    "DECRYPTING SECURITY ALGORITHMS...",
-    "SCANNING BIOMETRIC SIGNATURE...",
-    "VERIFYING CREDENTIALS...",
-    "ESTABLISHING SECURE CONNECTION...",
-    "ACCESSING NOVATERRA MAINFRAME...",
+    "Establishing secure connection...",
+    "Authenticating user credentials...",
+    "Accessing central database...",
+    "Loading navigation protocols...",
+    "Decrypting communication channels...",
+    "Scanning for system threats...",
+    "Calibrating quantum interface...",
+    "Synchronizing with fleet command...",
+    "Terminal ready. Welcome to NOVATERRA.",
   ]
 
   const [terminalOutput, setTerminalOutput] = useState<string[]>([])
@@ -54,7 +53,7 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
         const timer = setTimeout(() => {
           setTypingText((prev) => prev + line[typingIndex])
           setTypingIndex((prev) => prev + 1)
-        }, 30)
+        }, 15) // Reduced from 30ms to 15ms for smoother typing
 
         return () => clearTimeout(timer)
       } else {
@@ -63,11 +62,8 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
           setTypingText("")
           setTypingIndex(0)
           setCurrentLine((prev) => prev + 1)
-
-          // Play beep sound for each completed line
-          // Play beep sound for each completed line with error handling
-          safePlayAudio(beep1Ref)
-        }, 300)
+          safePlayAudio(beep1Ref, 0.3) // Reduced volume for less intrusive beeps
+        }, 150) // Reduced from 300ms to 150ms for faster line transitions
 
         return () => clearTimeout(timer)
       }
@@ -86,7 +82,7 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
   // }
 
   // With this safer version that includes error handling:
-  const safePlayAudio = (audioRef: React.RefObject<HTMLAudioElement>, volume = 1.0) => {
+  const safePlayAudio = (audioRef: React.RefObject<HTMLAudioElement | null>, volume = 1.0) => {
     if (audioRef.current) {
       audioRef.current.volume = volume
 
@@ -103,46 +99,46 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
   // Update the useEffect that handles sequence timing
   useEffect(() => {
     // Start ambient sound with error handling
-    safePlayAudio(ambientRef, 0.3)
+    safePlayAudio(ambientRef, 0.2) // Reduced ambient volume
 
     // Phase 0: Initial fade in
     const timer1 = setTimeout(() => {
       setPhase(1)
-      safePlayAudio(beep2Ref)
-    }, 1000)
+      safePlayAudio(beep2Ref, 0.3)
+    }, 500) // Reduced from 1000ms
 
     // Phase 1: Show grid
     const timer2 = setTimeout(() => {
       setShowGrid(true)
-      safePlayAudio(scanRef, 0.2)
-    }, 2000)
+      safePlayAudio(scanRef, 0.15)
+    }, 1000) // Reduced from 2000ms
 
     // Phase 2: Show scanline
     const timer3 = setTimeout(() => {
       setShowScanline(true)
-    }, 3000)
+    }, 1500) // Reduced from 3000ms
 
     // Phase 3: Show logo
     const timer4 = setTimeout(() => {
       setShowLogo(true)
-      safePlayAudio(beep2Ref)
-    }, 4000)
+      safePlayAudio(beep2Ref, 0.3)
+    }, 2000) // Reduced from 4000ms
 
     // Phase 4: Show text
     const timer5 = setTimeout(() => {
       setShowText(true)
-    }, 5000)
+    }, 2500) // Reduced from 5000ms
 
     // Phase 5: Show final text
     const timer6 = setTimeout(() => {
       setShowFinalText(true)
-    }, 12000)
+    }, 6000) // Reduced from 12000ms
 
     // Phase 6: Show access granted
     const timer7 = setTimeout(() => {
       setShowAccessGranted(true)
-      safePlayAudio(accessRef)
-    }, 14000)
+      safePlayAudio(accessRef, 0.4)
+    }, 7000) // Reduced from 14000ms
 
     // Phase 7: Fade out
     const timer8 = setTimeout(() => {
@@ -150,20 +146,20 @@ export default function IntroSequence({ onComplete }: IntroSequenceProps) {
       if (ambientRef.current) {
         // Fade out ambient sound
         const fadeAudio = setInterval(() => {
-          if (ambientRef.current && ambientRef.current.volume > 0.1) {
-            ambientRef.current.volume -= 0.1
+          if (ambientRef.current && ambientRef.current.volume > 0.05) {
+            ambientRef.current.volume -= 0.05 // Smoother volume reduction
           } else {
             clearInterval(fadeAudio)
             if (ambientRef.current) ambientRef.current.pause()
           }
-        }, 200)
+        }, 100) // Faster fade out intervals
       }
-    }, 16000)
+    }, 8000) // Reduced from 16000ms
 
     // Complete
     const timer9 = setTimeout(() => {
       onComplete()
-    }, 18000)
+    }, 9000) // Reduced from 18000ms
 
     return () => {
       clearTimeout(timer1)

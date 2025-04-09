@@ -16,14 +16,14 @@ const factionData = [
   // NPC Factions
   {
     id: "faction-001",
-    name: "Nova Fleet Command",
+    name: "Nova Bounty Association",
     description:
       "The official military and peacekeeping force of Novaterra. Responsible for maintaining order and protecting citizens from external threats.",
     leader: "Admiral Kaine",
     headquarters: "Central Hub",
     color: "blue",
     icon: Shield,
-    status: "allied",
+    status: "hostile",
     type: "npc",
     influence: 85,
     territories: ["Central Hub", "Military District", "Orbital Defense Platform"],
@@ -38,7 +38,7 @@ const factionData = [
     headquarters: "Black Market District",
     color: "red",
     icon: Skull,
-    status: "hostile",
+    status: "neutral",
     type: "npc",
     influence: 65,
     territories: ["Black Market District", "Undercity", "Smuggler's Bay"],
@@ -61,22 +61,22 @@ const factionData = [
   },
   {
     id: "faction-004",
-    name: "Freedom Coalition",
+    name: "Freedom Coalition & The Rogue Collective",
     description:
-      "A loose alliance of rebels and freedom fighters opposing what they see as corrupt governance. Operates primarily from the Outer Rim.",
-    leader: "Commander Valkyrae",
+      "A loose alliance of rebels, bandits, rogue bounty hunters, and freedom fighters opposing what they see as corrupt governance. Operates primarily from the Outer Rim.",
+    leader: "Commander Tsu",
     headquarters: "Outer Rim Territories",
     color: "yellow",
     icon: Flag,
     status: "hostile",
     type: "npc",
     influence: 45,
-    territories: ["Outer Rim Territories", "Abandoned Mining Colony", "Resistance Outpost"],
-    specialization: "Guerrilla Warfare",
+    territories: ["Outer Rim Territories", "Abandoned Outposts", "Rebel Hideouts"],
+    specialization: "Guerrilla Operations",
   },
   {
     id: "faction-005",
-    name: "Science Regulation Authority",
+    name: "T-5000",
     description:
       "Oversees all scientific research and development. Enforces strict regulations on AI, genetic engineering, and other advanced technologies.",
     leader: "Chief Scientist Lin",
@@ -88,104 +88,7 @@ const factionData = [
     influence: 70,
     territories: ["Research Station Gamma", "Bio-Engineering Complex", "Quantum Computing Center"],
     specialization: "Scientific Research",
-  },
-  {
-    id: "faction-006",
-    name: "Digital Collective",
-    description:
-      "A secretive group of hackers and AI specialists who believe in free access to information and technology. Often at odds with authorities.",
-    leader: "The Architect",
-    headquarters: "Digital Network Hub",
-    color: "cyan",
-    icon: Zap,
-    status: "suspicious",
-    type: "npc",
-    influence: 60,
-    territories: ["Digital Network Hub", "Virtual Reality Nexus", "Data Archives"],
-    specialization: "Information Technology",
-  },
-
-  // Player Factions
-  {
-    id: "faction-101",
-    name: "Nightfall Syndicate",
-    description:
-      "A player-run criminal organization specializing in high-tech heists and corporate espionage. Known for their stealth operations and advanced hacking capabilities.",
-    leader: "ShadowByte",
-    headquarters: "Sector 9 Undercity",
-    color: "indigo",
-    icon: Skull,
-    status: "hostile",
-    type: "player",
-    influence: 40,
-    territories: ["Sector 9 Undercity", "Abandoned Data Center"],
-    specialization: "Cyber Crime",
-    memberCount: 24,
-  },
-  {
-    id: "faction-102",
-    name: "Nexus Traders Alliance",
-    description:
-      "A coalition of independent merchants and traders who have banded together to protect their interests against larger corporations and criminal elements.",
-    leader: "StarTrader42",
-    headquarters: "Free Trade Zone",
-    color: "amber",
-    icon: Briefcase,
-    status: "neutral",
-    type: "player",
-    influence: 35,
-    territories: ["Free Trade Zone", "Merchant's Quarter"],
-    specialization: "Commerce",
-    memberCount: 31,
-  },
-  {
-    id: "faction-103",
-    name: "Chrome Guardians",
-    description:
-      "A vigilante group dedicated to protecting civilians in the lawless areas of Novaterra. Heavily augmented and well-armed, they operate outside official jurisdiction.",
-    leader: "IronPulse",
-    headquarters: "District 12 Borderlands",
-    color: "slate",
-    icon: Shield,
-    status: "allied",
-    type: "player",
-    influence: 30,
-    territories: ["District 12 Borderlands", "Refugee Settlement"],
-    specialization: "Security",
-    memberCount: 18,
-  },
-  {
-    id: "faction-104",
-    name: "Void Walkers",
-    description:
-      "A mysterious cult-like group obsessed with transhumanism and the merging of human consciousness with artificial intelligence. Conducts secretive experiments.",
-    leader: "NeuralAscension",
-    headquarters: "Unknown",
-    color: "violet",
-    icon: Zap,
-    status: "suspicious",
-    type: "player",
-    influence: 25,
-    territories: ["Hidden Laboratory"],
-    specialization: "Experimental Technology",
-    memberCount: 15,
-  },
-  {
-    id: "faction-105",
-    name: "Gaia's Children",
-    description:
-      "Environmental activists fighting against the industrial pollution and exploitation of Novaterra's remaining natural resources. Uses both peaceful and militant methods.",
-    leader: "EarthKeeper",
-    headquarters: "Biodome Alpha",
-    color: "emerald",
-    icon: Flask,
-    status: "neutral",
-    type: "player",
-    influence: 20,
-    territories: ["Biodome Alpha", "Reclaimed Green Zone"],
-    specialization: "Environmental Protection",
-    memberCount: 27,
-  },
+  }
 ]
 
 export default function FactionsPage() {
@@ -306,7 +209,7 @@ export default function FactionsPage() {
         title="FACTION DATABASE"
         subtitle="Information on all known factions in Novaterra"
         icon={<Users className="h-6 w-6 text-orange-500" />}
-        accentColor="orange"
+        accentColor="yellow"
       />
 
       <div className="mt-6">

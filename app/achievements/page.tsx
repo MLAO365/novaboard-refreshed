@@ -13,12 +13,12 @@ import {
   Crosshair,
   Shield,
   Ship,
-  Rocket,
-  Target,
-  Bomb,
-  Flame,
-  Compass,
-  Radar,
+  Eye,
+  Crown,
+  MoonStar,
+  Ghost,
+  Swords,
+  Castle,
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -28,7 +28,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import PageHeader from "@/components/page-header"
 import GlitchText from "@/components/glitch-text"
 
-// Sample achievements data
+// Enhanced achievements data
 const achievementsData = [
   {
     id: "ach-001",
@@ -52,7 +52,7 @@ const achievementsData = [
   },
   {
     id: "ach-003",
-    title: "Plague Spreader",
+    title: "Blast From The Past",
     description: "Eliminate 10 ships without taking hull damage.",
     reward: 2000,
     category: "combat",
@@ -67,7 +67,7 @@ const achievementsData = [
     reward: 1500,
     category: "stealth",
     difficulty: "medium",
-    status: "completed",
+    status: "in-progress",
     icon: Shield,
   },
   {
@@ -82,204 +82,67 @@ const achievementsData = [
   },
   {
     id: "ach-006",
-    title: "Ship Scavenger",
-    description: "Salvage components from 25 destroyed enemy vessels.",
-    reward: 3000,
-    category: "exploration",
+    title: "I hear voices inside of my head",
+    description: "Hear the whispers of the Leviathan for the first time.",
+    reward: 2500,
+    category: "lore",
     difficulty: "medium",
-    status: "in-progress",
-    icon: Ship,
+    status: "completed",
+    icon: Eye,
   },
   {
     id: "ach-007",
-    title: "Black Market Kingpin",
-    description: "Sell 100,000 credits worth of illegal salvage on the black market.",
-    reward: 2500,
-    category: "commerce",
-    difficulty: "medium",
-    status: "in-progress",
-    icon: Skull,
+    title: "The Valkyrie Rises",
+    description: "Get Valkyrae to unlock her full combat potential.",
+    reward: 6000,
+    category: "lore",
+    difficulty: "hard",
+    status: "locked",
+    icon: Crown,
+    requirement: "Unlock Valkyrae's Final Form First",
   },
   {
     id: "ach-008",
-    title: "Fleet Commander",
-    description: "Command a fleet of 5 ships simultaneously in combat.",
-    reward: 7500,
-    category: "leadership",
-    difficulty: "expert",
-    status: "locked",
-    icon: Ship,
-    requirement: "Reach Captain Rank 5",
+    title: "Flashbacks To Darker Days",
+    description: "Unlock hidden knowledge by talking to Leviathan",
+    reward: 4500,
+    category: "lore",
+    difficulty: "medium",
+    status: "in-progress",
+    icon: MoonStar,
   },
   {
     id: "ach-009",
-    title: "Notorious Pirate",
-    description: "Become wanted throughout the Novaterra Universe with a bounty exceeding 50,000 credits.",
+    title: "Wraith of the Void",
+    description: "Destroy a fleet while cloaked, leaving no trace.",
     reward: 10000,
-    category: "infamy",
+    category: "stealth",
     difficulty: "expert",
     status: "locked",
-    icon: Skull,
-    requirement: "Complete 'Reaper's Harvest' achievement",
+    icon: Ghost,
+    requirement: "Complete 'Ghost Protocol' and 'Eyes of the Leviathan'",
   },
   {
     id: "ach-010",
-    title: "System Domination",
-    description: "Control a significant region of the Novaterra Universe by eliminating all opposition.",
-    reward: 15000,
-    category: "leadership",
-    difficulty: "expert",
+    title: "The Warlord",
+    description: "Engage in a war against more than 20 factions at a time",
+    reward: 20000,
+    category: "combat",
+    difficulty: "legendary",
     status: "locked",
-    icon: Crosshair,
-    requirement: "Reach maximum reputation with Shadow Syndicate",
+    icon: Swords,
+    requirement: "Build an army of your own",
   },
   {
     id: "ach-011",
-    title: "The Plague",
-    description:
-      "Become so feared throughout the Novaterra Universe that enemy ships attempt to flee upon your arrival.",
-    reward: 20000,
-    category: "infamy",
+    title: "The Sovereign Protocol",
+    description: "Override the Leviathan's influence and reclaim your mind.",
+    reward: 15000,
+    category: "lore",
     difficulty: "legendary",
     status: "locked",
-    icon: Skull,
-    requirement: "Complete all combat achievements",
-  },
-  {
-    id: "ach-012",
-    title: "Void Sovereign",
-    description: "Defeat a capital ship single-handedly without taking critical damage.",
-    reward: 25000,
-    category: "combat",
-    difficulty: "legendary",
-    status: "locked",
-    icon: Ship,
-    requirement: "Complete 'The Plague' achievement",
-  },
-  // New achievements
-  {
-    id: "ach-013",
-    title: "Boarding Party",
-    description: "Successfully board and capture an enemy vessel without destroying it.",
-    reward: 3500,
-    category: "combat",
-    difficulty: "hard",
-    status: "in-progress",
-    icon: Rocket,
-  },
-  {
-    id: "ach-014",
-    title: "Ace Pilot",
-    description: "Destroy 5 enemy ships in a single engagement without taking damage.",
-    reward: 4000,
-    category: "combat",
-    difficulty: "hard",
-    status: "in-progress",
-    icon: Target,
-  },
-  {
-    id: "ach-015",
-    title: "Weapons Specialist",
-    description: "Upgrade all weapon systems on your ship to maximum level.",
-    reward: 5000,
-    category: "equipment",
-    difficulty: "medium",
-    status: "in-progress",
-    icon: Crosshair,
-  },
-  {
-    id: "ach-016",
-    title: "Shield Master",
-    description: "Survive an engagement with 3 or more enemy ships without shield failure.",
-    reward: 3000,
-    category: "defense",
-    difficulty: "medium",
-    status: "completed",
-    icon: Shield,
-  },
-  {
-    id: "ach-017",
-    title: "Bounty Hunter",
-    description: "Complete 10 bounty hunting missions successfully.",
-    reward: 4500,
-    category: "combat",
-    difficulty: "medium",
-    status: "in-progress",
-    icon: Target,
-  },
-  {
-    id: "ach-018",
-    title: "Smuggler's Run",
-    description: "Successfully transport illegal cargo through heavily patrolled areas of the Novaterra Universe.",
-    reward: 3500,
-    category: "stealth",
-    difficulty: "hard",
-    status: "in-progress",
-    icon: Rocket,
-  },
-  {
-    id: "ach-019",
-    title: "Asteroid Ace",
-    description: "Navigate through an asteroid field at maximum speed without taking damage.",
-    reward: 2500,
-    category: "piloting",
-    difficulty: "hard",
-    status: "locked",
-    icon: Compass,
-    requirement: "Upgrade engines to Tier 3",
-  },
-  {
-    id: "ach-020",
-    title: "Demolition Expert",
-    description: "Destroy a space station or large installation.",
-    reward: 8000,
-    category: "combat",
-    difficulty: "expert",
-    status: "locked",
-    icon: Bomb,
-    requirement: "Acquire heavy ordnance weapons",
-  },
-  {
-    id: "ach-021",
-    title: "Lone Wolf",
-    description: "Complete 20 missions without any allies or fleet support.",
-    reward: 5000,
-    category: "combat",
-    difficulty: "hard",
-    status: "in-progress",
-    icon: Ship,
-  },
-  {
-    id: "ach-022",
-    title: "Salvage King",
-    description: "Collect over 100,000 credits worth of salvage in a single expedition.",
-    reward: 6000,
-    category: "exploration",
-    difficulty: "medium",
-    status: "locked",
-    icon: Radar,
-    requirement: "Upgrade cargo hold to maximum capacity",
-  },
-  {
-    id: "ach-023",
-    title: "Scorched Space",
-    description: "Leave no survivors in 10 consecutive hostile encounters.",
-    reward: 7500,
-    category: "infamy",
-    difficulty: "expert",
-    status: "locked",
-    icon: Flame,
-    requirement: "Complete 'Reaper's Harvest' achievement",
-  },
-  {
-    id: "ach-024",
-    title: "Untouchable",
-    description: "Complete a full combat mission without taking any damage to your ship.",
-    reward: 4000,
-    category: "piloting",
-    difficulty: "hard",
-    status: "in-progress",
-    icon: Shield,
+    icon: Castle,
+    requirement: "Complete 'The Valkyrie Rises'",
   },
 ]
 
@@ -289,14 +152,12 @@ export default function AchievementsPage() {
   const [statusFilter, setStatusFilter] = useState("all")
   const [difficultyFilter, setDifficultyFilter] = useState("all")
 
-  // Calculate total achievements and completion stats
   const totalAchievements = achievementsData.length
   const completedAchievements = achievementsData.filter((ach) => ach.status === "completed").length
   const inProgressAchievements = achievementsData.filter((ach) => ach.status === "in-progress").length
   const lockedAchievements = achievementsData.filter((ach) => ach.status === "locked").length
   const completionPercentage = Math.round((completedAchievements / totalAchievements) * 100)
 
-  // Calculate total rewards
   const earnedRewards = achievementsData
     .filter((ach) => ach.status === "completed")
     .reduce((total, ach) => total + ach.reward, 0)
@@ -305,9 +166,7 @@ export default function AchievementsPage() {
     .filter((ach) => ach.status !== "completed")
     .reduce((total, ach) => total + ach.reward, 0)
 
-  // Filter achievements based on search query and filters
   const filteredAchievements = achievementsData.filter((achievement) => {
-    // Filter by search query
     if (
       searchQuery &&
       !achievement.title.toLowerCase().includes(searchQuery.toLowerCase()) &&
@@ -315,13 +174,8 @@ export default function AchievementsPage() {
     )
       return false
 
-    // Filter by category
     if (categoryFilter !== "all" && achievement.category !== categoryFilter) return false
-
-    // Filter by status
     if (statusFilter !== "all" && achievement.status !== statusFilter) return false
-
-    // Filter by difficulty
     if (difficultyFilter !== "all" && achievement.difficulty !== difficultyFilter) return false
 
     return true
@@ -364,6 +218,10 @@ export default function AchievementsPage() {
         return <Badge className="bg-blue-900/50 text-blue-400 border-blue-500/50">DEFENSE</Badge>
       case "piloting":
         return <Badge className="bg-cyan-900/50 text-cyan-400 border-cyan-500/50">PILOTING</Badge>
+      case "lore":
+        return <Badge className="bg-purple-900/50 text-purple-400 border-purple-500/50">LORE</Badge>
+      case "story":
+        return <Badge className="bg-yellow-900/50 text-yellow-400 border-yellow-500/50">STORY</Badge>
       default:
         return <Badge className="bg-slate-900/50 text-slate-400 border-slate-500/50">MISC</Badge>
     }
@@ -469,6 +327,8 @@ export default function AchievementsPage() {
               <SelectItem value="equipment">Equipment</SelectItem>
               <SelectItem value="defense">Defense</SelectItem>
               <SelectItem value="piloting">Piloting</SelectItem>
+              <SelectItem value="lore">Lore</SelectItem>
+              <SelectItem value="story">Story</SelectItem>
             </SelectContent>
           </Select>
 
@@ -593,4 +453,3 @@ export default function AchievementsPage() {
     </div>
   )
 }
-

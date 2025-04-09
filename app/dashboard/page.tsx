@@ -1,25 +1,26 @@
 "use client"
 import { Command } from "lucide-react"
 import PageHeader from "@/components/page-header"
-import TokenBalance from "@/components/token-balance"
+// import TokenBalance from "@/components/token-balance" // Removed TokenBalance import
 
 export default function DashboardPage() {
-    return (
-        <div className="container mx-auto px-4 py-8">
-            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
-                <TokenBalance />
-            </div>
-            <PageHeader
-                title="COMMAND DASHBOARD"
-                subtitle="Overview of the Novaterra universe"
-                icon={<Command className="h-6 w-6 text-green-500" />}
-                accentColor="green"
-            />
+  return (
+    <div className="container mx-auto px-4 py-8">
+      {/* Added TokenBalance component here */}
+      {/* <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}> */}
+      {/* <TokenBalance /> */}
+      {/* </div> */}
 
-            {/* Remove Tabs Content, Tabs, TabsList, TabsTrigger */}
+      <PageHeader
+        title="COMMAND DASHBOARD"
+        subtitle="Overview of the Novaterra universe"
+        icon={<Command className="h-6 w-6 text-green-500" />}
+        accentColor="green"
+      />
 
-            {/* If you have other dashboard content, add it here */}
+      {/* Remove Tabs Content, Tabs, TabsList, TabsTrigger */}
 
-        </div>
-    );
+      {/* If you have other dashboard content, add it here */}
+    </div>
+  )
 }

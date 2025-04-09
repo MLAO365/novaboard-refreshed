@@ -22,7 +22,7 @@ const stockItems = [
     trend: "stable",
     price: 1200,
     location: "Central Hub",
-    lastUpdated: "2187-04-12",
+    lastUpdated: "2025-04-05",
   },
   {
     id: "item-002",
@@ -33,7 +33,7 @@ const stockItems = [
     trend: "down",
     price: 800,
     location: "Military Outpost",
-    lastUpdated: "2187-04-11",
+    lastUpdated: "2025-04-07",
   },
   {
     id: "item-003",
@@ -44,7 +44,7 @@ const stockItems = [
     trend: "down",
     price: 1500,
     location: "Docking Station Alpha",
-    lastUpdated: "2187-04-10",
+    lastUpdated: "2025-04-07",
   },
   {
     id: "item-004",
@@ -55,7 +55,7 @@ const stockItems = [
     trend: "up",
     price: 500,
     location: "Central Hub",
-    lastUpdated: "2187-04-12",
+    lastUpdated: "2025-04-08",
   },
   {
     id: "item-005",
@@ -66,7 +66,7 @@ const stockItems = [
     trend: "up",
     price: 3000,
     location: "Mining Colony Beta",
-    lastUpdated: "2187-04-09",
+    lastUpdated: "2025-04-08",
   },
   {
     id: "item-006",
@@ -77,7 +77,7 @@ const stockItems = [
     trend: "stable",
     price: 2500,
     location: "Research Station Gamma",
-    lastUpdated: "2187-04-11",
+    lastUpdated: "2025-04-08",
   },
   {
     id: "item-007",
@@ -88,7 +88,7 @@ const stockItems = [
     trend: "up",
     price: 5000,
     location: "Medical Center",
-    lastUpdated: "2187-04-10",
+    lastUpdated: "2025-04-07",
   },
   {
     id: "item-008",
@@ -99,7 +99,7 @@ const stockItems = [
     trend: "stable",
     price: 7500,
     location: "Luxury District",
-    lastUpdated: "2187-04-08",
+    lastUpdated: "2025-04-08",
   },
   {
     id: "item-009",
@@ -110,7 +110,7 @@ const stockItems = [
     trend: "down",
     price: 10000,
     location: "Black Market District",
-    lastUpdated: "2187-04-07",
+    lastUpdated: "2025-04-07",
   },
   {
     id: "item-010",
@@ -121,7 +121,7 @@ const stockItems = [
     trend: "down",
     price: 2000,
     location: "Docking Station Alpha",
-    lastUpdated: "2187-04-11",
+    lastUpdated: "2025-04-07",
   },
 ]
 
@@ -456,4 +456,3 @@ export default function StockSystemPage() {
     </div>
   )
 }
-

@@ -10,7 +10,7 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import GlitchText from "@/components/glitch-text"
 import PageHeader from "@/components/page-header"
 
-// Single announcement about dashboards being released
+// Announcements array with both the system update and the new alert
 const announcements = [
   {
     id: "ann-001",
@@ -22,9 +22,29 @@ const announcements = [
     type: "announcement",
     category: "system",
   },
+  {
+    id: "ann-002",
+    title: "⚠️ Incoming Demonic Warships Approaching Sky Citadel",
+    content:
+      "This is a critical alert to all residents and guardians of the Sky Citadel: multiple demonic warships have been sighted on the outer rim of the celestial defense perimeter. Prepare all defensive wards, rally strike units, and ensure all civilians are guided to the underground sanctums. The threat is imminent—this is not a drill.",
+    date: "2025-04-07",
+    author: "Sky Citadel Command",
+    type: "alert",
+    category: "system",
+  },
+  {
+    id: "ann-003",
+    title: "Stock Market Now Live at Trading Outposts",
+    content:
+      "The Novaterra Stock Market has officially launched! Visit any Trading Outpost to interact with our StockBrokers (NPCs) who will assist you in buying and managing your stock portfolio. This new feature allows you to invest in various companies and assets across the Novaterra universe. Start your investment journey today!",
+    date: "2025-04-08",
+    author: "Novaterra Financial Services",
+    type: "announcement",
+    category: "system",
+  },
 ]
 
-// Move the utility functions outside of the component scope so they can be accessed by both components
+// Utility functions for icons and badges
 const getTypeIcon = (type: string) => {
   switch (type) {
     case "alert":
@@ -185,4 +205,3 @@ function AnnouncementCard({ announcement }: { announcement: any }) {
     </Card>
   )
 }
-

@@ -12,12 +12,13 @@ interface NotificationItem {
 
 export default function ScrollingNotificationBar() {
   const [notifications, setNotifications] = useState<NotificationItem[]>([
-    { id: 1, text: "BREAKING: Unknown fleet detected near Research Station Omega", type: "alert" },
-    { id: 2, text: "Supply convoy scheduled to arrive at Central Hub in 48 hours", type: "info" },
-    { id: 3, text: "Security alert: Unauthorized access attempts detected in Designated Zone 7", type: "warning" },
+    { id: 1, text: "BREAKING: Bandit fleets detected near Research Station Omega", type: "alert" },
+    { id: 2, text: "Supply convoy scheduled to arrive at Central Hub on April 14th, 2025", type: "info" },
+    { id: 3, text: "Security alert: Unauthorized NPC's were spotted in Barley's Trading Post", type: "warning" },
     { id: 4, text: "New bounty posted: The Ghost - 200,000 CR - Last seen in Crimson Nebula", type: "info" },
-    { id: 5, text: "Fuel prices increased by 15% due to recent pirate activity", type: "info" },
+    { id: 5, text: "Fuel prices for all ships have increased by 15% due to recent pirate activity", type: "info" },
     { id: 6, text: "URGENT: All ships advised to avoid Designated Zone 9 due to radiation storm", type: "alert" },
+    { id: 7, text: "All the times and dates have been adjusted to your timezone, which is EST! If this is incorrect, please let your developer know.", type: "info" },
   ])
 
   const [scrollPosition, setScrollPosition] = useState(0)

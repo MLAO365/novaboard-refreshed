@@ -16,139 +16,28 @@ const eventsData = [
     title: "Quantum Tech Auction",
     description:
       "Exclusive auction featuring cutting-edge quantum technology prototypes from leading research facilities.",
-    date: "2187-04-20",
-    time: "19:00",
-    location: "Luxury District - Auction House",
+    date: "2025-04-15",
+    time: "19:00 AM EST",
+    location: "None, Digital Auction",
     type: "auction",
-    organizer: "Commerce Guild",
+    organizer: "Novaterra Staff",
     entryFee: 5000,
-    rewards: "Rare tech prototypes, exclusive access to quantum research",
+    rewards: "Whatever you buy!",
     status: "upcoming",
   },
   {
     id: "event-002",
-    title: "Neural Interface Tournament",
+    title: "Citadel Brawling Tournament",
     description:
-      "Competitive gaming tournament using the latest neural interface technology. Test your skills in direct mind-to-machine combat.",
-    date: "2187-04-25",
+      "Competitive combative move tag team tournament",
+    date: "2025-04-25",
     time: "14:00",
-    location: "Digital Network Hub - Arena Level",
+    location: "The Sky Citadel - Citadel Boxing Gym",
     type: "tournament",
     organizer: "Digital Collective",
-    entryFee: 1000,
-    rewards: "100,000 credits, prototype neural enhancers",
+    entryFee: 5000,
+    rewards: "1,000,000 Nova Tokens",
     status: "upcoming",
-  },
-  {
-    id: "event-003",
-    title: "Black Market Clearance",
-    description:
-      "Special clearance sale of confiscated goods from recent Shadow Syndicate raids. All items sold as-is with no questions asked.",
-    date: "2187-04-18",
-    time: "22:00",
-    location: "Undercity - Warehouse 7",
-    type: "market",
-    organizer: "Anonymous Broker",
-    entryFee: 500,
-    rewards: "Discounted contraband, rare items",
-    status: "upcoming",
-  },
-  {
-    id: "event-004",
-    title: "Experimental Biotech Showcase",
-    description:
-      "Scientific demonstration of the latest advancements in biological augmentation technology. Volunteer test subjects needed.",
-    date: "2187-04-30",
-    time: "10:00",
-    location: "Research Station Gamma - Exhibition Hall",
-    type: "showcase",
-    organizer: "Science Regulation Authority",
-    entryFee: 0,
-    rewards: "Free basic augmentations for volunteers, research data",
-    status: "upcoming",
-  },
-  {
-    id: "event-005",
-    title: "Orbital Defense Simulation",
-    description:
-      "Military training exercise open to civilian participants. Test your combat skills in a simulated orbital defense scenario.",
-    date: "2187-05-05",
-    time: "08:00",
-    location: "Military District - Training Facility",
-    type: "training",
-    organizer: "Nova Fleet Command",
-    entryFee: 2000,
-    rewards: "Military-grade equipment, security clearance upgrades",
-    status: "upcoming",
-  },
-  {
-    id: "event-006",
-    title: "Resistance Recruitment Drive",
-    description:
-      "Seeking new members to join the fight against corporate oppression. Bring your own weapons and a distrust for authority.",
-    date: "2187-05-10",
-    time: "20:00",
-    location: "Outer Rim Territories - Abandoned Factory",
-    type: "recruitment",
-    organizer: "Freedom Coalition",
-    entryFee: 0,
-    rewards: "Faction reputation, access to restricted areas",
-    status: "upcoming",
-  },
-  {
-    id: "event-007",
-    title: "Annual Tech Expo",
-    description:
-      "The biggest technology exhibition of the year, featuring innovations from across Novaterra and beyond.",
-    date: "2187-05-15",
-    time: "09:00",
-    location: "Central Hub - Convention Center",
-    type: "expo",
-    organizer: "Commerce Guild & Science Regulation Authority",
-    entryFee: 1500,
-    rewards: "Technology samples, networking opportunities",
-    status: "upcoming",
-  },
-  {
-    id: "event-008",
-    title: "Synthetic Drug Trial",
-    description:
-      "Clinical trial for a new cognitive enhancement drug. Participants will be compensated for their time and potential side effects.",
-    date: "2187-04-15",
-    time: "13:00",
-    location: "Medical District - Research Clinic",
-    type: "trial",
-    organizer: "Unknown Pharmaceutical Company",
-    entryFee: 0,
-    rewards: "10,000 credits, free medication for life (if successful)",
-    status: "completed",
-  },
-  {
-    id: "event-009",
-    title: "Virtual Reality Escape Challenge",
-    description:
-      "Test your problem-solving skills in a deadly VR simulation. Failure in the game means pain in real life.",
-    date: "2187-04-10",
-    time: "16:00",
-    location: "Entertainment District - VR Center",
-    type: "challenge",
-    organizer: "Digital Collective",
-    entryFee: 3000,
-    rewards: "50,000 credits, exclusive neural software",
-    status: "completed",
-  },
-  {
-    id: "event-010",
-    title: "Corporate Espionage Contract",
-    description: "High-paying job opportunity for skilled infiltrators. Target details provided upon acceptance.",
-    date: "2187-04-05",
-    time: "23:00",
-    location: "Luxury District - Rooftop Bar",
-    type: "contract",
-    organizer: "Anonymous Client",
-    entryFee: 0,
-    rewards: "200,000 credits, rare technology",
-    status: "completed",
   },
 ]
 
@@ -172,7 +61,7 @@ const groupEventsByMonth = (events: typeof eventsData) => {
 
 export default function EventsPage() {
   const [activeTab, setActiveTab] = useState("upcoming")
-  const [currentMonth, setCurrentMonth] = useState("2187-04") // Format: YYYY-MM
+  const [currentMonth, setCurrentMonth] = useState("2025-04") // Format: YYYY-MM
 
   // Filter events based on active tab
   const filteredEvents = eventsData.filter((event) => event.status === activeTab)
@@ -248,7 +137,7 @@ export default function EventsPage() {
         title="EVENT CALENDAR"
         subtitle="Upcoming and past developer events"
         icon={<CalendarIcon className="h-6 w-6 text-pink-500" />}
-        accentColor="pink"
+        accentColor="purple"
       />
 
       <div className="mt-6">
@@ -385,7 +274,7 @@ export default function EventsPage() {
                     <Button
                       variant="outline"
                       className="mt-4 border-pink-900/50 text-pink-400 hover:bg-pink-900/20"
-                      onClick={() => setCurrentMonth("2187-04")}
+                      onClick={() => setCurrentMonth("2025-04")}
                     >
                       Return to Current Month
                     </Button>
@@ -399,4 +288,3 @@ export default function EventsPage() {
     </div>
   )
 }
-

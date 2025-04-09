@@ -110,7 +110,7 @@ export default function Navigation() {
   return (
     <>
       {/* Mobile menu button */}
-      <div className="md:hidden fixed bottom-4 right-4 z-50">
+      <div className="md:hidden fixed bottom-4 right-4 z-30">
         <Button
           variant="outline"
           size="icon"
@@ -124,7 +124,7 @@ export default function Navigation() {
       {/* Mobile navigation */}
       <div
         className={cn(
-          "fixed inset-0 bg-black/95 z-40 flex flex-col items-center justify-center md:hidden transition-transform duration-300",
+          "fixed inset-0 bg-black/95 z-20 flex flex-col items-center justify-center md:hidden transition-transform duration-300",
           isOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
@@ -170,7 +170,7 @@ export default function Navigation() {
       </div>
 
       {/* Desktop navigation */}
-      <div className="hidden md:block w-64 border-r border-green-900/50 bg-black/90 backdrop-blur-sm h-screen overflow-y-auto">
+      <div className="hidden md:block w-64 border-r border-green-900/50 bg-black/90 backdrop-blur-sm h-screen overflow-y-auto z-10">
         <div className="p-4">
           <div className="flex items-center space-x-2 mb-6 px-2">
             <Terminal className="h-5 w-5 text-green-500" />

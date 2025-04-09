@@ -18,8 +18,8 @@ const locations = [
     id: "central-hub",
     name: "Central Hub",
     type: "station",
-    x: 50,
-    y: 50,
+    x: 62,
+    y: 41,
     description: "The main command center of Novaterra. Houses the central government and military headquarters.",
     status: "secure",
     population: "High",
@@ -54,8 +54,8 @@ const locations = [
     id: "digital-network",
     name: "Digital Network Hub",
     type: "digital",
-    x: 60,
-    y: 65,
+    x: 59,
+    y: 78,
     description: "The central node of Novaterra's digital infrastructure. Heavily protected against cyber attacks.",
     status: "secure",
     population: "Virtual",
@@ -102,11 +102,11 @@ const locations = [
   // New locations
   {
     id: "nova-fleet-hq",
-    name: "Nova Fleet Headquarters",
+    name: "Nova Bounty Association Headquarters",
     type: "military",
-    x: 55,
-    y: 45,
-    description: "The primary military base of Nova Fleet Command. Houses the fleet's flagship and command operations.",
+    x: 63,
+    y: 50,
+    description: "The primary military base of Bounty Association. Houses the fleet's flagship and command operations.",
     status: "secure",
     population: "High",
     resources: ["Military", "Technology", "Medical"],
@@ -116,8 +116,8 @@ const locations = [
     id: "mining-colony-beta",
     name: "Mining Colony Beta",
     type: "colony",
-    x: 80,
-    y: 65,
+    x: 97,
+    y: 54,
     description: "Major mining operation extracting rare minerals and resources. Vital to Novaterra's economy.",
     status: "secure",
     population: "Medium",
@@ -152,8 +152,8 @@ const locations = [
     id: "docking-station-alpha",
     name: "Docking Station Alpha",
     type: "station",
-    x: 52,
-    y: 42,
+    x: 49,
+    y: 23,
     description: "Primary docking facility for civilian and commercial vessels. Hub of trade and transportation.",
     status: "secure",
     population: "High",
@@ -164,8 +164,8 @@ const locations = [
     id: "research-station-gamma",
     name: "Research Station Gamma",
     type: "station",
-    x: 70,
-    y: 55,
+    x: 69,
+    y: 74,
     description: "Active research facility focused on advanced technology and scientific breakthroughs.",
     status: "restricted",
     population: "Medium",
@@ -185,11 +185,23 @@ const locations = [
     danger: "medium",
   },
   {
+    id: "sky-citadel",
+    name: "The Sky Citadel",
+    type: "colony/trading outpost",
+    x: 32,
+    y: 68,
+    description: "A floating trading hub known for exotic goods and fair prices. Popular stop for merchants and traders.",
+    status: "secure",
+    population: "Medium",
+    resources: ["Trade Goods", "Information", "Luxury Items"],
+    danger: "low",
+  },
+  {
     id: "abandoned-colony",
     name: "Abandoned Colony",
     type: "colony",
-    x: 15,
-    y: 60,
+    x: 14,
+    y: 69,
     description: "Once-thriving colony mysteriously abandoned. Rumors of strange occurrences keep most visitors away.",
     status: "abandoned",
     population: "None",
@@ -200,8 +212,8 @@ const locations = [
     id: "quantum-research-lab",
     name: "Quantum Research Lab",
     type: "facility",
-    x: 85,
-    y: 40,
+    x: 86,
+    y: 31,
     description: "Secretive facility researching quantum physics and experimental technologies.",
     status: "restricted",
     population: "Low",
@@ -236,7 +248,7 @@ const locations = [
     id: "smugglers-haven",
     name: "Smuggler's Haven",
     type: "area",
-    x: 25,
+    x: 13,
     y: 30,
     description: "Hidden outpost frequented by smugglers and those looking to avoid official attention.",
     status: "lawless",
@@ -246,17 +258,65 @@ const locations = [
   },
   {
     id: "plague-fleet-location",
-    name: "Plague Doctor Fleet",
-    type: "fleet",
+    name: "Your Location",
+    type: "na",
     x: 32,
     y: 65,
     description:
-      "Last known location of the Plague Doctor's fleet. Highly dangerous area with confirmed bioweapon presence.",
+      "This is where you are!",
     status: "quarantine",
     population: "Unknown",
     resources: ["Bioweapons", "Experimental Technology"],
     danger: "extreme",
     isSpecial: true,
+  },
+  {
+    id: "barleys-outpost",
+    name: "Barley's Trading Outpost",
+    type: "colony/trading outpost",
+    x: 46,
+    y: 56,
+    description: "A bustling trading hub known for its diverse merchandise and fair deals. Run by the charismatic trader Barley.",
+    status: "secure",
+    population: "Medium",
+    resources: ["Trade Goods", "Food", "Ship Parts"],
+    danger: "low",
+  },
+  {
+    id: "starfall-market",
+    name: "Starfall Market",
+    type: "colony/trading outpost",
+    x: 82,
+    y: 32,
+    description: "An elegant trading post specializing in luxury goods and rare artifacts. Popular among wealthy merchants.",
+    status: "secure",
+    population: "Medium",
+    resources: ["Luxury Goods", "Art", "Exotic Materials"],
+    danger: "low",
+  },
+  {
+    id: "frontier-exchange",
+    name: "Frontier Exchange",
+    type: "colony/trading outpost",
+    x: 10,
+    y: 45,
+    description: "A rough-and-tumble trading post on the frontier. Known for black market goods and no-questions-asked deals.",
+    status: "lawless",
+    population: "Medium",
+    resources: ["Contraband", "Weapons", "Information"],
+    danger: "high",
+  },
+  {
+    id: "nebula-bazaar",
+    name: "Nebula Bazaar",
+    type: "colony/trading outpost",
+    x: 71,
+    y: 15,
+    description: "A trading outpost nestled in the crimson nebula. Specializes in rare minerals and experimental technology.",
+    status: "caution",
+    population: "Medium",
+    resources: ["Rare Minerals", "Technology", "Research Data"],
+    danger: "medium",
   },
 ]
 
@@ -271,8 +331,8 @@ const getSpecialLocationMarker = (location: any) => {
         }}
       >
         <div className="relative">
-          <div className="absolute -inset-3 bg-blue-500/30 rounded-full animate-ping"></div>
-          <div className="absolute -inset-2 bg-blue-500/50 rounded-full animate-pulse"></div>
+          <div className="absolute -inset-1 bg-blue-500/30 rounded-full animate-ping"></div>
+          <div className="absolute -inset-1 bg-blue-500/50 rounded-full animate-pulse"></div>
           <div className="h-3 w-3 bg-blue-500 rounded-full relative z-10"></div>
         </div>
       </div>
@@ -293,7 +353,7 @@ const getLocationIcon = (type: string) => {
       return "⊡"
     case "military":
       return "⚔"
-    case "colony":
+    case "colony/trading outpost":
       return "⌂"
     case "gate":
       return "⎊"
@@ -330,6 +390,21 @@ export default function MapPage() {
   const [mouseCoords, setMouseCoords] = useState({ x: 0, y: 0 })
   const [showCoords, setShowCoords] = useState(false)
 
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!mapRef.current) return
+
+    const rect = mapRef.current.getBoundingClientRect()
+    const x = Math.round(((e.clientX - rect.left) / rect.width) * 100)
+    const y = Math.round(((e.clientY - rect.top) / rect.height) * 100)
+
+    setMouseCoords({ x, y })
+    setShowCoords(true)
+  }
+
+  const handleMouseLeave = () => {
+    setShowCoords(false)
+  }
+
   useEffect(() => {
     const updateMapSize = () => {
       if (mapRef.current) {
@@ -355,21 +430,6 @@ export default function MapPage() {
     setTimeout(() => {
       setIsScanning(false)
     }, 3000)
-  }
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (!mapRef.current) return
-
-    const rect = mapRef.current.getBoundingClientRect()
-    const x = Math.round(((e.clientX - rect.left) / rect.width) * 100)
-    const y = Math.round(((e.clientY - rect.top) / rect.height) * 100)
-
-    setMouseCoords({ x, y })
-    setShowCoords(true)
-  }
-
-  const handleMouseLeave = () => {
-    setShowCoords(false)
   }
 
   const getStatusBadge = (status: string) => {
@@ -679,7 +739,7 @@ export default function MapPage() {
               </div>
               <div className="flex items-center">
                 <span className="text-blue-500 text-2xl mr-2">⌂</span>
-                <span className="text-sm text-slate-300">Colony</span>
+                <span className="text-sm text-slate-300">Colony/Trading Outpost</span>
               </div>
               <div className="flex items-center">
                 <span className="text-blue-500 text-2xl mr-2">⎊</span>
@@ -697,7 +757,7 @@ export default function MapPage() {
                 <div className="h-3 w-3 bg-blue-500 rounded-full mr-2 relative">
                   <div className="absolute -inset-1 bg-blue-500/30 rounded-full animate-ping"></div>
                 </div>
-                <span className="text-sm text-slate-300">Plague Doctor Fleet</span>
+                <span className="text-sm text-slate-300">Your Location</span>
               </div>
             </div>
 
@@ -725,4 +785,3 @@ export default function MapPage() {
     </div>
   )
 }
-

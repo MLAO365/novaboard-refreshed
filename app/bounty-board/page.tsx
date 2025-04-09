@@ -187,7 +187,7 @@ const bounties = [
     type: "Player",
     amount: 900000,
     description:
-      "A player who got their hands on illegal reality-warping technology at the start of the game. Has created multiple unstable pocket that can lure demonds anywhere.",
+      "A player who got their hands on illegal reality-warping technology at the start of the game. Has created multiple unstable pocket that can lure demons anywhere.",
     status: "active",
     danger: "medium",
     lastSeen: "The Sky Citadel",
@@ -402,4 +402,3 @@ function BountyCard({ bounty }: { bounty: any }) {
     </Card>
   )
 }
-
