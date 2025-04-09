@@ -29,7 +29,7 @@ export async function POST(req) {
         }
 
         const db = createClient({
-            url: process.env.TURSO_DB_URL,
+            url: process.env.TURSO_DATABASE_URL,
             authToken: process.env.TURSO_AUTH_TOKEN,
         });
 
