@@ -6,11 +6,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: 'export',
-  basePath: '/Novaboard',
-  images: {
-    unoptimized: true,
-  },
   webpack: (config, { isServer }) => {
     if (isServer) {
       config.externals = [
