@@ -12,8 +12,6 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
-  [plugins.inputs]
-    skipBuildCache = true
 
 [[headers]]
   for = "/*"
