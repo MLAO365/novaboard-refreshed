@@ -2,11 +2,7 @@
 
 import { useState } from "react"
 import { MessageSquare, Calendar, User, Radio, AlertCircle, Search } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button, Card, CardContent, Badge, Input, Tabs, TabsList, TabsTrigger } from "@/components/ui"
 import GlitchText from "@/components/glitch-text"
 import PageHeader from "@/components/page-header"
 
