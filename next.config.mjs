@@ -19,6 +19,8 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: 'export',
+  basePath: '/Novaboard',
   images: {
     unoptimized: true,
   },
@@ -26,6 +28,13 @@ const nextConfig = {
     webpackBuildWorker: true,
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
+  },
+  webpack: (config) => {
+    config.externals = {
+      ...config.externals,
+      bcrypt: 'commonjs bcrypt',
+    }
+    return config
   },
 }
 
