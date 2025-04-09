@@ -1,13 +1,19 @@
 [build]
   publish = "out"
-  command = "pnpm install && pnpm run build"
+  command = "pnpm install --no-frozen-lockfile && pnpm run build"
 
 [build.environment]
-  NODE_VERSION = "18"
-  NPM_FLAGS = "--version"
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
+  NEXT_TELEMETRY_DISABLED = "1"
+
+[functions]
+  node_bundler = "esbuild"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+  [plugins.inputs]
+    skipBuildCache = true
 
 [[headers]]
   for = "/*"
