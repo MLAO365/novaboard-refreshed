@@ -33,9 +33,9 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui"
-import PageHeader from "@/components/page-header"
-import GlitchText from "@/components/glitch-text"
+} from "../../components/ui"
+import PageHeader from "../../components/page-header"
+import GlitchText from "../../components/glitch-text"
 
 // Enhanced achievements data
 const achievementsData = [
