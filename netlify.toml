@@ -1,6 +1,8 @@
 [build]
   publish = "out"
-  command = "pnpm install --no-frozen-lockfile && pnpm rebuild bcrypt --build-from-source && pnpm run build"
+  command = "pnpm install --no-frozen-lockfile"
+  command = "pnpm rebuild bcrypt --build-from-source"
+  command = "pnpm run build"
 
 [build.environment]
   NODE_VERSION = "18.17.0"
