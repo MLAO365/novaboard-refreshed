@@ -1,0 +1,11 @@
+name = "novaboard-refreshed"
+compatibility_date = "2025-04-09"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "npm run build"
+cwd = "."
+dist = ".cloudflare/static"
+
+[site]
+bucket = ".cloudflare/static" 
