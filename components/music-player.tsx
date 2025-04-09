@@ -222,7 +222,9 @@ export default function MusicPlayer() {
 
     return () => {
       // Clean up
-      delete window.onYouTubeIframeAPIReady
+      if (window.onYouTubeIframeAPIReady) {
+        window.onYouTubeIframeAPIReady = undefined;
+      }
     }
   }, [])
 
@@ -277,9 +279,9 @@ export default function MusicPlayer() {
           events: {
             onReady: onPlayerReady,
             onStateChange: onPlayerStateChange,
-            onError: (e) => {
+            onError: (e: Error) => {
               console.error("YouTube player error:", e)
-              setDebugMessage(`Player error: ${e.data}`)
+              setDebugMessage(`Player error: ${e.message}`)
             },
           },
         })

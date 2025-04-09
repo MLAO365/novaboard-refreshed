@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import Image from "next/image"
 
 import { useEffect, useState } from "react"
 import { useRouter, usePathname } from "next/navigation"
@@ -87,7 +88,13 @@ export default function AuthCheck({ children }: { children: React.ReactNode }) {
       <div className="min-h-screen flex flex-col relative">
         <div className="absolute inset-0 z-0">
           <div className="fixed inset-0 w-full h-full">
-            <img src="/background.gif" alt="" className="w-full h-full object-cover" />
+            <Image 
+              src="/background.gif" 
+              alt="Background" 
+              fill 
+              className="object-cover"
+              priority
+            />
             <div className="absolute inset-0 bg-black/40"></div>
           </div>
         </div>
