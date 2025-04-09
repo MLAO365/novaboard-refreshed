@@ -10,8 +10,7 @@
     "lint": "next lint"
   },
   "engines": {
-    "node": ">=18.17.0",
-    "pnpm": ">=8.0.0"
+    "node": ">=18.17.0"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
