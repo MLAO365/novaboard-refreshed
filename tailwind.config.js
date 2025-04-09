@@ -82,6 +82,18 @@ module.exports = {
           "0%": { backgroundPosition: "0 0" },
           "100%": { backgroundPosition: "100% 100%" },
         },
+        scan: {
+          "0%": { transform: "translateY(-100%)" },
+          "100%": { transform: "translateY(100vh)" },
+        },
+        "spin-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        "spin-reverse": {
+          "0%": { transform: "rotate(360deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -89,6 +101,9 @@ module.exports = {
         blink: "blink 1.5s infinite",
         slideIn: "slideIn 0.5s ease-out forwards",
         "grid-flow": "grid-flow 20s linear infinite",
+        scan: "scan 4s linear infinite",
+        "spin-slow": "spin-slow 10s linear infinite",
+        "spin-reverse": "spin-reverse 15s linear infinite",
       },
       backgroundImage: {
         "grid-pattern":

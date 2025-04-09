@@ -145,8 +145,8 @@ export default function LoginPage() {
       {/* Background GIF */}
       <div className="absolute inset-0 z-0">
         <div className="fixed inset-0 w-full h-full">
-          <img src="https://files.catbox.moe/3plf2v.gif" alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-black/60"></div>
+          <img src="/login-background.gif" alt="" className="w-full h-full object-cover opacity-80" />
+          <div className="absolute inset-0 bg-black/80"></div>
         </div>
       </div>
 
@@ -162,7 +162,7 @@ export default function LoginPage() {
       <div className="absolute bottom-1/3 right-1/4 w-48 h-48 rounded-full border border-green-900/20 animate-spin-reverse opacity-20"></div>
 
       <div className="container max-w-md px-4 z-20">
-        <Card className="bg-black/80 border-green-900/50 backdrop-blur-sm overflow-hidden">
+        <Card className="bg-black/90 border-green-900/50 backdrop-blur-sm overflow-hidden shadow-glow-green">
           <CardContent className="p-0">
             {/* Header */}
             <div
