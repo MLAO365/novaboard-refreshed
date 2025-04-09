@@ -29,10 +29,12 @@ const nextConfig = {
     parallelServerBuildTraces: true,
     parallelServerCompiles: true,
   },
-  webpack: (config) => {
-    config.externals = {
-      ...config.externals,
-      bcrypt: 'commonjs bcrypt',
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals = [
+        ...(Array.isArray(config.externals) ? config.externals : []),
+        'bcrypt'
+      ]
     }
     return config
   },
